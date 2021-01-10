@@ -59,7 +59,7 @@ module.exports = class GameManager
         });}catch{
             try{await this.guild.channels.create('bot_'+this.getAuthorName(msg),{
                 type: 'Text', permissionOverwrites: permArr,
-        });}catch{msg.reply("ERROR: Could not create new channel");}}   
+        });}catch(err){msg.reply("ERROR: Could not create new channel \n error is : "+err);}}   
     }
 
     sendGMMsg(msg, msgInfo){
